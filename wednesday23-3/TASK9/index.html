@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        div{
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+           
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+
+<div id="div1" onclick="myfunction()"></div>
+<script>
+    let color=document.getElementById("div1");
+color.style.backgroundColor="blue";
+let y=0;
+function myfunction() {
+
+  let change = ["blue","red","green","blue"];
+
+  color.style.backgroundColor = change[y]; 
+   y++;
+
+   if (y ===change.length) y=0; 
+
+   }
+
+</script>
+    
+</body>
+</html>
