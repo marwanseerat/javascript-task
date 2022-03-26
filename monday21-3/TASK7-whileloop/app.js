@@ -11,41 +11,43 @@
 
 // console.log('Here is : While')
 
-/*
-1
-Create a function called subtract
-that takes a single parameter n,
-and return the subtraction of all
-starting from n to 0
-Ex: subtract(2); => 2 - 1 - 0 => 1
-Ex: subtract(5); => 5 - 4 - 3 - 2 - 1 - 0 => -5
-Ex: subtract(9); => 9 - 8 - 7 - 6 - 5 - 4 - 3 - 2 - 1 - 0 => -27
-*/
+// 1
+// Create a function called subtract
+// that takes a single  parameter n,
+// and return the subtraction of all
+// starting from n to 0
+// Ex: subtract(2); => 2 - 1 - 0 => 1
+// Ex: subtract(5); => 5 - 4 - 3 - 2 - 1 - 0 => -5
+// Ex: subtract(9); => 9 - 8 - 7 - 6 - 5 - 4 - 3 - 2 - 1 - 0 => -27
 
 
-/*
-2
-Create a function called factorial
-that takes a single parameter n,
-and return the product of all integers up to n starting from 1
-Ex: factorial(2); => 2 * 1 => 2
-Ex: factorial(4); => 4 * 3 * 2 * 1 => 24
-*/
+// 2
+// Create a function called factorial
+// that takes a single parameter n,
+// and return the product of all integers up to n starting from 1
+// Ex: factorial(2); => 2 * 1 => 2
+// Ex: factorial(4); => 4 * 3 * 2 * 1 => 24
 
 
-/*
-3
-Create a function called repeatStr
-that takes 2 parameters string and number,
-and return the string number time with space
-Important: the continue condition should be [somthing !== 0]
-** Think how we can return nothing ???
-** Important: You should dint have extra space at the end
-Ex: repeatStr("to",2); => "to to"
-Ex: repeatStr("to",4); => "to to to to"
-*/
 
-
+// 3
+// Create a function called repeatStr
+// that takes 2 parameters string and number,
+// and return the string number time with space
+// Important: the continue condition should be [somthing !== 0]
+// ** Think how we can return nothing ???
+// ** Important: You should dint have extra space at the end
+// Ex: repeatStr("to",2); => "to to"
+// Ex: repeatStr("to",4); => "to to to to"
+function repeatStr(string,times) {
+   let repeatStr="" ;
+   while(times>0){
+       repeatStr+=string;
+       times--;
+   }
+   return repeatStr
+}
+document.getElementById("task3").innerHTML=(repeatStr("to" +" " ,4));
 /*
 4
 Create a function called sum2

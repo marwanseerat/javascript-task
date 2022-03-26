@@ -95,34 +95,83 @@
     // console.log(std1.shownam());
 
 
-class book{
-    constructor(title,auther, year){
-        this.title=title
-        this.auther=auther
-        this.year=year
-    }
-    getsummary() {
-        return `${this.title} was written by ${this.auther} in ${this.year}`;
-    }
+// class book{
+//     constructor(title,auther, year){
+//         this.title=title
+//         this.auther=auther
+//         this.year=year
+//     }
+//     getsummary() {
+//         return `${this.title} was written by ${this.auther} in ${this.year}`;
+//     }
 
-    getage() {
-        const years= new  Date ().getFullYear()
-        this.year;
-        return `${this.title} is ${years} years old`;
+//     getage() {
+//         const years= new  Date ().getFullYear()
+//         this.year;
+//         return `${this.title} is ${years} years old`;
+//     }
+
+//     revise(newyear){
+//         this.year=newyear
+//         this.reviserd =true
+//     }
+
+
+// }
+
+// const book1 =new book ('darkside','marwa','2010');
+// console.log(book);
+// book1.revise("2020")
+// console.log(book1);
+// console.log(book1.getsummary());
+// console.log(book1.getage());
+// console.log(book1.revise());
+
+// function sayhello(userName,age) {
+//     if (age>18) {
+//         console.log(`hello ${userName} your age ${age}`);
+//     }else{
+//         console.log(`app is not suitable for you`);
+//     }
+// }
+
+// sayhello("marwa",23)
+// sayhello("aya",23)
+// sayhello("obada",23)
+// sayhello("lolo",5)
+
+// function generateyears(start,end,) {
+//    for (let i=start ; i<=end ;i++){
+//        if (i===2001)
+//        return `interruptting`
+//        console.log(i);
+//    }
+// }
+// generateyears(1998,2022)
+
+
+// function calc(num1,num2) {
+//     return num1+num2
+// }
+
+// let result =calc(10,20)
+// console.log(result +100);
+
+// function calculate(x,y) {
+    
+// }
+// calculate(2,4)
+
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor"];
+
+let colors = ["Red", "Green", "Black"];
+
+mainLoop: for (let i = 0; i < products.length; i++) {
+  console.log(products[i]);
+  nestedLoop: for (let j = 0; j < colors.length; j++) {
+    console.log(`- ${colors[j]}`);
+    if (colors[j] === "Green") {
+      break mainLoop;
     }
-
-    revise(newyear){
-        this.year=newyear
-        this.reviserd =true
-    }
-
-
+  }
 }
-
-const book1 =new book ('darkside','marwa','2010');
-console.log(book);
-book1.revise("2020")
-console.log(book1);
-console.log(book1.getsummary());
-console.log(book1.getage());
-console.log(book1.revise());
