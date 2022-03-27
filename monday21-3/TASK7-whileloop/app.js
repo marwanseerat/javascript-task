@@ -19,16 +19,32 @@
 // Ex: subtract(2); => 2 - 1 - 0 => 1
 // Ex: subtract(5); => 5 - 4 - 3 - 2 - 1 - 0 => -5
 // Ex: subtract(9); => 9 - 8 - 7 - 6 - 5 - 4 - 3 - 2 - 1 - 0 => -27
+function subtract(num) {
+    let sub=num
+    while (num>0) {
+        num-=1;
+        sub=sub-num;
 
-
+    }
+return sub
+}
+subtract(2)
+document.getElementById("task1").innerHTML=subtract(2)
 // 2
 // Create a function called factorial
 // that takes a single parameter n,
 // and return the product of all integers up to n starting from 1
 // Ex: factorial(2); => 2 * 1 => 2
 // Ex: factorial(4); => 4 * 3 * 2 * 1 => 24
-
-
+function factorial(num) {
+    let fact=1
+    while (num>0) {
+        fact=fact*num;
+        num--;
+    }
+    return fact
+}
+document.getElementById("task2").innerHTML=factorial(4)+" ,"+factorial(5)
 
 // 3
 // Create a function called repeatStr
@@ -48,125 +64,189 @@ function repeatStr(string,times) {
    return repeatStr
 }
 document.getElementById("task3").innerHTML=(repeatStr("to" +" " ,4));
-/*
-4
-Create a function called sum2
-that take two parameter
-and will return the sumation from the first number to the second number
-Ex: sum2(4, 5); => 4 + 5 => 9
-Ex: sum2(3, 6); => 3 + 4 + 5 + 6 => 18
-*/
+
+// 4
+// Create a function called sum2
+// that take two parameter
+// and will return the sumation from the first number to the second number
+// Ex: sum2(4, 5); => 4 + 5 => 9
+// Ex: sum2(3, 6); => 3 + 4 + 5 + 6 => 18
+function sum2(x,y) {
+    let sum=1;
+    while (x<=y) {
+        sum=sum+x;
+        x++;
+    }
+    return sum
+}
+document.getElementById("task4").innerHTML=sum2(4,6);
+
+// 5
+// Create a function called repeatStr2
+// that takes 2 string parameters,
+// and return the first string number time
+// (of the lenght of the secend string) with space betweeen it
+// ** Important: the continue condition should be [somthing!== 0]
+// ** Important: You should't have extra space at the end
+// Ex: repeatStr2("ro","cc"); => "ro ro"
+// Ex: repeatStr2("ro","fff"); => "ro ro ro"
+function repeatStr2(string,strnum) {
+    let repeatStr="" ;
+    num=strnum.length
+    while(num>0){
+        repeatStr+=string;
+        num--;
+    }
+    return repeatStr
+ }
+
+ document.getElementById("task5").innerHTML=repeatStr2("ro"+" " ,"fff")
+ 
 
 
-/*
-5
-Create a function called repeatStr2
-that takes 2 string parameters,
-and return the first string number time
-(of the lenght of the secend string) with space betweeen it
-** Important: the continue condition should be [somthing!== 0]
-** Important: You should't have extra space at the end
-Ex: repeatStr2("ro","cc"); => "ro ro"
-Ex: repeatStr2("ro","fff"); => "ro ro ro"
-*/
+// 6
+// Create a function called multiOf
+// that takes 3 parameters,
+// and return the first number mutiple by
+// (the second one ^ the third number)
+// ** Important: dont use **
+// Ex: multiOf(4,10,3); => 4000
+// Ex: multiOf(6,3,2); => 54
+// Ex: multiOf(6,2,3); => 48
+function multiOf(A,B,c) {
+    let S;
+    while(c){
+        S=Math.pow(B,c);
+        S=S*A;
+        break;
+    }
+    return S;}
+
+document.getElementById("task6").innerHTML= multiOf(6,3,2)
+
+// 7
+// Create a function called muti2
+// that take two parameter
+// and will return the multiplication
+// from the first number to the second number
+// Ex: muti2(4, 5); => 4 * 5 => 20
+// Ex: muti2(3, 6); => 3 * 4 * 5 * 6 => 360
+function muti2(x,y) {
+    let muti=1
+    while (y>=x) {
+        muti=muti*x;
+        x++;
+    }
+    return muti
+}
+
+document.getElementById("task7").innerHTML=muti2(3, 6);
+
+// 8
+// Create a function called numberBetweenUs
+// that take 2 parameters
+// and return the number between them
+// ** Important: You should't have extra space at the end and comma
+// ** Important: the stop condition should [num1!==num2-1]
+// ** hint: maybe you will have 2 if statment
+// numberBetweenUs(2,8) => "3, 4, 5, 6, 7"
+// numberBetweenUs(1,3) => "2"
+function numberBetweenUs(num1,num2){
+    let str="";
+    while(num1 !== num2-1){
+        num1++;
+         str+=num1;
+         if(num1 !== num2-1){
+         str+=",";}
+    }
+    return str;
+}
+
+document.getElementById("task8").innerHTML=numberBetweenUs(2,8)
+// 9
+// Write a function called countDown
+// that takes one parameter
+// and return a string represent the count down from the number
+// that insert to 0
+// instead of 0 you shoulf have "done"
+// between each number a comma and space
+// ** you need to use recursion
+// ** Important: You should't have extra space at the end and comma
+// countDown(5)
+// => "5, 4, 3, 2, 1, done"
+// countDown(2)
+// => "2, 1, done"
+// countDown(7)
+// => "7, 6, 5, 4, 3, 2, 1, done"
+function countDown(num){
+    let stri="";
+    while(num>=0){
+         if(num===0){
+         stri+="done"; break;}
+         stri+=num;
+         stri+=",";
+         num--;
+    }
+    return str;
+}
+
+document.getElementById("task9").innerHTML=countDown(5)
+// 10
+// Write a function called multiplication2
+// that takes two parameters
+// and return the multiplication of them
+// you need to use only sum
+// multiplication2(5,4) => 20
+// multiplication2(2,8) => 16
+// multiplication2(7,6) =>  42
+function multiplication2(num1,num2){
+    return num1*num2;
+}
 
 
-/*
-6
-Create a function called multiOf
-that takes 3 parameters,
-and return the first number mutiple by
-(the second one ^ the third number)
-** Important: dont use **
-Ex: multiOf(4,10,3); => 4000
-Ex: multiOf(6,3,2); => 54
-Ex: multiOf(6,2,3); => 48
-*/
+document.getElementById("task10").innerHTML=multiplication2(5,4)
+// 11
+// Write a function called mod2
+// that takes two parameters
+// and return the module of them
+// without using %
+// mod2(5,4) => 1
+// mod2(2,8) => 2
+// mod2(7,4) => 3
+// mod2(8,4) => 0
+function mod2(num1,num2){
+    return num1%num2;
+}
 
 
-/*
-7
-Create a function called muti2
-that take two parameter
-and will return the multiplication
-from the first number to the second number
-Ex: muti2(4, 5); => 4 * 5 => 20
-Ex: muti2(3, 6); => 3 * 4 * 5 * 6 => 360
-*/
+document.getElementById("task11").innerHTML= mod2(2,8)
+
+// 12
+// Write a function called repeatChar
+// that takes two parameters
+// and return the times that this char
+// without case sensetive
+// repeat inside this string
+// **hint: "str"[0] => "s"
+// **hint: "car"[1] => "a"
+// repeatChar("schOol","o") => 2
+// repeatChar("school","a") => 0
+// repeatChar("School","s") => 1
+// try more case by yourself
+
+function repeatChar(string,char){
+    let count=0;
+    let i=0;
+    while(i<string.length){
+        if(char.toLowerCase()==str.charAt(i)){
+            count++;
+        }
+        i++;
+    }
+    return count;}
 
 
-/*
-8
-Create a function called numberBetweenUs
-that take 2 parameters
-and return the number between them
-** Important: You should't have extra space at the end and comma
-** Important: the stop condition should [num1!==num2-1]
-** hint: maybe you will have 2 if statment
-numberBetweenUs(2,8) => "3, 4, 5, 6, 7"
-numberBetweenUs(1,3) => "2"
-*/
-
-
-/*
-9
-Write a function called countDown
-that takes one parameter
-and return a string represent the count down from the number
-that insert to 0
-instead of 0 you shoulf have "done"
-between each number a comma and space
-** you need to use recursion
-** Important: You should't have extra space at the end and comma
-countDown(5)
-=> "5, 4, 3, 2, 1, done"
-countDown(2)
-=> "2, 1, done"
-countDown(7)
-=> "7, 6, 5, 4, 3, 2, 1, done"
-*/
-
-/*
-10
-Write a function called multiplication2
-that takes two parameters
-and return the multiplication of them
-you need to use only sum
-multiplication2(5,4) => 20
-multiplication2(2,8) => 16
-multiplication2(7,6) =>  42
-*/
-
-/*
-11
-Write a function called mod2
-that takes two parameters
-and return the module of them
-without using %
-mod2(5,4) => 1
-mod2(2,8) => 2
-mod2(7,4) => 3
-mod2(8,4) => 0
-*/
-
-
-/*
-12
-Write a function called repeatChar
-that takes two parameters
-and return the times that this char
-without case sensetive
-repeat inside this string
-**hint: "str"[0] => "s"
-**hint: "car"[1] => "a"
-repeatChar("schOol","o") => 2
-repeatChar("school","a") => 0
-repeatChar("School","s") => 1
-try more case by yourself
-*/
-
-
-
+    document.getElementById("task12").innerHTML=repeatChar("school","a")
 
 
 
