@@ -5,6 +5,7 @@ let mobileinfo=[];
 function storeInLocalStorage(){
     let stringArray=JSON.stringify(mobileinfo);
     localStorage.setItem("data",stringArray);
+    callFromLocalStorage()
 }
 
 function callFromLocalStorage(){
@@ -28,6 +29,7 @@ function mobile(useName,typeNameD) {
     mobileinfo.push(this);
     informationprint();
     console.log();
+    storeInLocalStorage()
     
 }
 
@@ -63,13 +65,18 @@ function handelsubmit(event) {
 handelsubmit();
 
 function informationprint() {
-    let trElement = document.createElement("tr");
-    let tdElement4 = document.createElement("td");
-    let tdElement1 = document.createElement("td");
-    let tdElement2 = document.createElement("td");
-    let tdElement3 = document.createElement("td");
-
+    // let trElement = document.createElement("tr");
+    // let tdElement4 = document.createElement("td");
+    // let tdElement1 = document.createElement("td");
+    // let tdElement2 = document.createElement("td");
+    // let tdElement3 = document.createElement("td");
+    tableItem.textContent='';
     for (let i = 0; i < mobileinfo.length; i++){
+        let trElement = document.createElement("tr");
+        let tdElement4 = document.createElement("td");
+        let tdElement1 = document.createElement("td");
+        let tdElement2 = document.createElement("td");
+        let tdElement3 = document.createElement("td");
         tableItem.appendChild(trElement);
         trElement.appendChild(tdElement4);
         trElement.appendChild(tdElement1);

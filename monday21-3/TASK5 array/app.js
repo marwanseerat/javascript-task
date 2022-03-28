@@ -7,9 +7,9 @@
 // // Correct the syntax error
 // let number= [ 1 ,7 , 9 , 45]
 
-//   let name=["Str", "alex","moh"]
+  let name=["Str", "alex","moh"]
 
-//   let word=['the', 'fox', 'over', 'lazy', 'dog']
+  let word=['the', 'fox', 'over', 'lazy', 'dog']
 
 
 
@@ -18,7 +18,7 @@
 // 2
 // What is the index of "Banana”, Tomato"
 // var fruits=["Tomato","Banana","Watermelon"]
-// banana= [1]   tomato=[0]
+banana= [1]  , Tomato=[0]
 
 
 
@@ -26,11 +26,11 @@
 // 3
 // Create an array represents your:
 // 1- Favorite Food (5)
-// let food =['pizza', 'frid chicken' , 'burger' ,'mandi', 'maqlooba'] 
-// // 2- Favorite Sport (3)
-// let sport =['gym', 'football' , 'vollyball'] 
-// // 3- Favorite Movie (4)
-// let movie =['hitch', ' valentines day' , 'long story short' ,'overboard'] 
+let food =['pizza', 'frid chicken' , 'burger' ,'mandi', 'maqlooba'] 
+// 2- Favorite Sport (3)
+let sport =['gym', 'football' , 'vollyball'] 
+// 3- Favorite Movie (4)
+let movie =['hitch', ' valentines day' , 'long story short' ,'overboard'] 
 
 
 
@@ -40,18 +40,18 @@
 // and return the first element in an array
 
 // Ex: firstOfArray([1,4,5]) => 1
-// function firstOfArray(number) {
-//     number =[1,4,5]
-//   return number=number(0)
-// }
+function firstOfArray(number) {
+    number =[1,4,5]
+  return number=number(0)
+}
 
 
 
 // Ex: firstOfArray(["t","u","g","x"]) => "t"
-// function firstOfArray2(alpha) {
-//     alpha =[1,4,5]
-//   return alpha=alpha(0)
-// }
+function firstOfArray2(alpha) {
+    alpha =[1,4,5]
+  return alpha=alpha(0)
+}
 
 
 
@@ -71,23 +71,23 @@
 
 // Ex: lastOfArray(["t","u","g","x"]) => "x"
 
-// function lastOfArray2(word) {
-//   word=["t","u","g","x"]
-// return word=word(3)
-// }
+function lastOfArray2(word) {
+  word=["t","u","g","x"]
+return word=word(3)
+}
 
 
 // 6
 // Using console make this array to be like this one (push, unshift, shift, pop)
 
-// var array = [0,5,7,9]
-// array.shift();
-// array.shift();
-// array.shift();
-// array.unshift(1,3,4,6,8)
-// array.push(10)
-// console.log(array);
-// => [1,3,4,6,8,9,10]
+var array = [0,5,7,9]
+array.shift();
+array.shift();
+array.shift();
+array.unshift(1,3,4,6,8)
+array.push(10)
+console.log(array);
+[1,3,4,6,8,9,10]
 
 
 
@@ -98,10 +98,10 @@
 
 // var array2 = [5,9,-7,3.5]
 
-// // array2.shift();
-// // // array2.unshift(1,6,8)
-// // // array2.push(10)
-// // // console.log(array2);
+array2.shift();
+array2.unshift(1,6,8)
+array2.push(10)
+console.log(array2);
 
 
 
