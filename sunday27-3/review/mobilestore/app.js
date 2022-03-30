@@ -89,4 +89,61 @@ function informationprint() {
   
     }
 }
+/////////////////////////////////////////////locationform////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+// let locElement=document.getElementById("locForm");
+// let locpara=document.getElementById("cityResult");
+// let button=document.getElementById("submit2");
 
+// locElement.addEventListener("submit", function(event){
+//     event.preventDefault();
+// let city=event.target.locName.value;
+//     getData(city);
+//   });
+// async function getData(x) {
+//     let responce= await fetch(`https://eu1.locationiq.com/v1/search.php?key=pk.5242a80a93c4591514004371fe3507ee&q=${x}&format=json`);
+//     let data= await responce.json();
+//     console.log(data[0]);
+//     locpara.innerHTML=`City name is :${data[0].display_name.split(",",2)} || Longitude is :${data[0].lon} || latitude is:${data[0].lat}`;
+//     document.querySelector(`#img`).src=data[0].icon;
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// async function getData(){
+//     let responce= await fetch('https://eu1.locationiq.com/v1/search.php?key=pk.5242a80a93c4591514004371fe3507ee&q=amman&format=json')
+//     console.log(typeof responce);
+//     let data=await responce.json()
+//    let string1='';
+//    let display=data.map(function marwa(name1){
+//        string1+=`<li style="font-weight:bold;">display_name:${name1.display_name.slice(0,26)} </li>
+//        <li style="font-weight:bold;">lat:${name1.lat} </li>
+//        <li><b>lon:</b>${name1.lon} </li> `; 
+//        document.body.innerHTML= string1 
+
+//    })
+//    console.log(display);
+
+   
+// }
+//   getData()
+  
+//   console.log("get data out side the function");

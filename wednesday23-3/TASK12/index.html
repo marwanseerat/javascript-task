@@ -8,18 +8,18 @@
 </head>
 <body>
 
-<form>
-    <lable>Password (min 6 characters):</lable>
-    <input type="password" name="password1" id="password1" size="10" placeholder="Password" value="passwrd1" onkeyup="checkPasswords()">
+    <form onsubmit="input()">
+      
+        <label for="password1">Password (min 6 characters): </label>
+        <input type="password" name="password1" id="password1" placeholder="Password" oninput="checkPassword();">
+        <div id="passcheck1" ></div>
+        <label for="password2">Repeat password: </label>
+        <input type="password" name="password1" id="password2" placeholder="Password" oninput="checkPassword();">
+        <div id="passcheck2" ></div>
+        <button id="Submit">Submit</button>
+    </form>
 
-<br>
-<br>
-    <lable>Repeat password:</lable>
-            <input type="password" name="password2" id="password2" size="10" placeholder="Password" value="passwrd2" onkeyup="checkPasswords()">
-            
-</form>
 
-
-    <script src="./app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

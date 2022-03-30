@@ -187,10 +187,11 @@ function countDown(num){
          stri+=",";
          num--;
     }
-    return str;
+    return stri;
 }
 
-document.getElementById("task9").innerHTML=countDown(5)
+document.getElementById("task9").innerHTML= countDown(5);
+
 // 10
 // Write a function called multiplication2
 // that takes two parameters
@@ -243,10 +244,11 @@ function repeatChar(string,char){
         }
         i++;
     }
-    return count;}
+    return count;
+}
 
+    document.getElementById("task12").innerHTML= repeatChar("schOol","o") ;
 
-    document.getElementById("task12").innerHTML=repeatChar("school","a")
 
 
 
