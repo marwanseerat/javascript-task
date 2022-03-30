@@ -15,7 +15,7 @@
             width: fit-content;
         }
     </style>
-</head>
+<!-- </head>
 <body>
     <body>
 
@@ -24,5 +24,37 @@
         <input type="text" id="input" value="">
         <button id="submit">submit</button>
         <div id="result" class="result"></div>
+        <script src="./app2.js"></script> -->
+
+
+
+        <div class="bootstrap-iso">
+            <div class="container-fluid">
+             <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+           
+               <!-- Form code begins -->
+               <form method="post">
+                 <div class="form-group"> <!-- Date input -->
+                   <label class="control-label" for="date">Date</label>
+                   <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+                 </div>
+                 <div class="form-group"> <!-- Submit button -->
+                   <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+                 </div>
+                </form>
+                <!-- Form code ends --> 
+           
+               </div>
+             </div>    
+            </div>
+           </div>
+
+        <div class="input-group date" data-provide="datepicker">
+            <input type="text" class="form-control">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-th"></span>
+            </div>
+        </div>
 </body>
 </html>

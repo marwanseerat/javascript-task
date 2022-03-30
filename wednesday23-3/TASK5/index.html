@@ -11,11 +11,12 @@
     <form onsubmit="input()">
       
         <label for="password1">Password (min 6 characters): </label>
-        <input type="password" name="password1" id="password1" placeholder="Password" oninput="checkPassword();">
+        <input name="password" type="password" placeholder="password"  id="pass1"/>
         <div id="passcheck1" ></div>
         <label for="password2">Repeat password: </label>
-        <input type="password" name="password1" id="password2" placeholder="Password" oninput="checkPassword();">
-        <div id="passcheck2" ></div>
+        <input name="repeatpassword" type="password" placeholder="confirm password" id="pass2" onkeyup="checkPass(); false;" />
+        <div id="error-nwl"></div>
+
         <button id="Submit">Submit</button>
     </form>
 

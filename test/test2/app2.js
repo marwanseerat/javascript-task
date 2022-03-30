@@ -1,13 +1,13 @@
-var first =new Promise(function(resolve,reject){
-    let connection =true 
+// var first =new Promise(function(resolve,reject){
+//     let connection =true 
 
-    if(connection){
-        resolve("connection success");
-    }else{
-        reject(Error("connection faild"))
-    }
+//     if(connection){
+//         resolve("connection success");
+//     }else{
+//         reject(Error("connection faild"))
+//     }
 
-});
+// });
 
 // first.then(function(resolve){
 // console.log(resolve);
@@ -15,5 +15,7 @@ var first =new Promise(function(resolve,reject){
 //     console.log(reject);}
 // })
 
+let x="ahmad went to aqaba Ahmad eated";
 
-    
+console.log(str.replace(/a/,"A"));
+
