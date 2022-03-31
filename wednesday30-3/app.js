@@ -1,63 +1,85 @@
 "use strict";
- let  regesfrom=document.getElementById("divForm")
-let firstname=document.getElementById("fName");
-let lastname=document.getElementById("lName");
-let birthdat=document.getElementById("date");
-let email_=document.getElementById("email");
-let confemail=document.getElementById("emailCon");
-let pass1=document.getElementById("pass");
-let confpass1=document.getElementById("passCon");
+ let regform=[];
 
-function getinfo(fName,lName,date,email,emailCon,pass,passCon) {
-    this.fName=fName;
-    this.lName=lName;
-    this.date=date;
-    this.email=email;
-    this.emailCon=emailCon;
-    this.pass=pass;
-    this.passCon=passCon;
-    this.fullname=checkinfo(this.fName, this.lName);
-    this.date= checkdate(this.date)
-    this.fullemail=checkemail(this.email,this.emailCon)
-    console.log( this.fullname);
-    console.log(this.date );
-    console.log(this.email,this.emailCon);
-}
+function checkform() {
+    // let  regesfrom=document.getElementById("divForm").value;
+    let firstname=document.getElementById("fName").value;
+    let lastname=document.getElementById("lName").value ;
+    let birthdat=document.getElementById("date") .value;
+    let email_=document.getElementById("email") .value;
+    let confemail=document.getElementById("emailCon") .value;
+    let pass1=document.getElementById("pass") .value;
+    let confpass1=document.getElementById("passCon") .value;
 
-function checkinfo(fName,lName) {
-    let regex = /[a-zA-Z\s]+$/;
-    if(regex.test(fName)&&(regex.test(lName))){
-       return  fName+lName
-    }else{
-        return `the name is incorrect`
-    }
-    
-   
+    let pwd_expression = /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+    let letters = /[A-Za-z]+$/;
+    let filter = /([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    let capital=/[A_Z]/;
+
+if(firstname==''){
+    alert('Please enter your first name'); 
+}else if (letters.test(lastname)){
+    alert('First name field required only alphabet characters');
 }
 
 
-function checkdate(date) {
-    let regex1=/(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/;
-if(regex1.test(date)){
-    return date;
-
-}else{
-    return `invalid date`
+else if(lastname==''){
+    alert('Please enter your last name.');
+}else if( letters.test(lastname)){
+    alert('First name field required only alphabet characters');
 }
+else if(email_=='')
+{
+    alert('Please enter your user email id');
+}
+else if (!filter.test(email_))
+{
+    alert('Invalid email');
+}
+else if(confemail=='')
+{
+    alert('Please enter Email confirmation');
+}
+else if (confemail != confemail)
+{
+    alert('email does not match');
+}
+
+else if(pass1=='')
+{
+    alert('Please enter Password');
+}
+else if(confpass1=='')
+{
+    alert('Enter Confirm Password');
+}
+else if(!pwd_expression.test(pass1) && !capital.test(pass1[0]))
+
+{
+    alert ('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
+}
+else if(pass1 != confpass1)
+{
+    alert ('Password not Matched');
+}
+else if(document.getElementById("pass").value.length < 8)
+{
+    alert ('Password minimum length is 8');
+}
+else if(document.getElementById("pass").value.length > 32)
+{
+    alert ('Password max length is 32');
+}
+else
+{                                           
+       alert('Thank You for Registration');
+}
+regform.push(firstname,lastname,email_,birthdat);
+
 }
 
 
 
-function checkemail(email,emailCon) {
-    let regex2=/(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if(regex2.test(email)&&(regex2.test(emailCon))){
-        return  email+emailCon
-     }else{
-         return `the E-mail is incorrect`
-     }
-
-
-}
 
 
 
@@ -68,20 +90,8 @@ function checkemail(email,emailCon) {
 
 
 
-regesfrom.addEventListener("submit",handelsubmit);
-function handelsubmit(e) {
-    e.preventDefault();
 
-    let fristname =e.target.fristname.value;
-     let lastname=e.target.lastname.value;
-     let password=e.target.password.value;
-     let passwordcon=e.target.passwordcon.value;
-     let date=e.target.date.value;
-     let email=e.target.email.value;
-     let emailconf=e.target.emailconf.value;
 
-     new getinfo(fristname,lastname,password,passwordcon,date,email,emailconf)
-}
-handelsubmit() 
+
 
 

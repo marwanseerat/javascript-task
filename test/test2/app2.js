@@ -15,7 +15,8 @@
 //     console.log(reject);}
 // })
 
-let x="ahmad went to aqaba Ahmad eated";
+// let x="ahmad went to aqaba Ahmad eated";
 
-console.log(str.replace(/a/,"A"));
+// console.log(str.replace(/a/,"A"));
 
+console.log(('b' + 'a' + + 'a' + 'a').toLowerCase());

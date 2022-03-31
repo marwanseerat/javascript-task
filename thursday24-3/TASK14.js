@@ -1,7 +1,4 @@
-
-// 1
-// Create an object represents you
-// have your first name, last name, age, dob(date of birth), favorite food (3),favorite movie (5)
+////////////////////////////////Q1
 
 let person={
   firstname:"marwa",
@@ -12,10 +9,11 @@ let person={
   favoritemovie :['hitch', ' valentines day' , 'long story short' ,'overboard'] 
 
 }
+console.log(person);
 
-document.getElementById("demo").innerHTML = person ;
+// document.getElementById("task1").innerHTML=" I'm "+person.firstname+" "+person.lastname+" and I'm "+person.age+" years old , My birthday is "+person.dob+ " and these are my favoritefood :"+person.favoritefood.join( ", ") +" and my favorite Movies are:" +person.favoritemovie.join(", ");
 
-
+////////////////////////Q2
 
 
 var persons = [
@@ -26,214 +24,247 @@ var persons = [
   { name: { first: 'Soso', last: 'Al-Amora' }, age: 67 }
 ];
 
+//////Task2
+function firstName(fname){
+let newarray=[];
+for (let i=0; i< fname.length; i++){
+  newarray.push(fname[i].name.first)
+}
+console.log(newarray);
+return newarray;
+};
 
-// 2
-// Using the varabile persons
-// Create a function called firstName
-// that accept an object
-// and return all the first name of the person insides
 
-// Ex: firstName(persons) => ['John', 'Alex', 'Alice', 'Thor', 'Soso']
-let arr1 = [];
 
-function firstName(persons) {
-  for (x = 0; x < persons.length; x++) {
+// document.getElementById("task2").innerHTML=firstName(persons);
 
-    arr1[x] = persons[x].name['first'];
+
+//////////////////////////////////////////Q3
+
+
+function averageAge(x){
+  let sum=0;
+  let Age_count=0;
+  // let avg=sum / 5;
+  
+  for (let i=0; i< x.length; i++){
+    sum += x[i].age;
+    Age_count++;
   }
 
-  return arr1;
-
+ if (Age_count == 0) {
+  return 0;
+ }
+ let avg = sum /Age_count;
+ console.log(avg);
+ return avg;
 }
 
-console.log(firstName(persons))
-document.getElementById("demo2").innerHTML = arr1 ;
+
+// document.getElementById("task3").innerHTML=averageAge(persons);
 
 
-// 3
-// Using the varabile persons
-// Create a function called averageAge
-// that accept an object
-// and return the average age of those persons
-
-// Ex: averageAge(persons) => 41.2
-
-function averageAge(persons) {
-  arr1 = 0;
-  for (let i = 0; i < persons.length; i++) {
+//////////////////////////////////////////Q4
 
 
-    arr1 += persons[i].age / 2
-  }
-  return arr1
-}
-
-console.log(averageAge(persons))
-
-console.log(firstName(persons))
-document.getElementById("demo3").innerHTML = arr1 ;
-
-
-// 4
-// Using the varabile persons
-// Create a function called olderPerson
-// that accept an object
-// and return the full name of the older person
-
-// Ex: olderPerson(persons) => "Soso Al-Amora"
-
-function olderPerson(person) {
-  let max = persons[0].age;
-  let oldername = "";
-
-  for (let i = 0; i < persons.length; i++) {
-    if (max < persons[i].age) {
-      max = person[i].age;
-      oldername = persons[i]['name']['first'] + ' ' + persons[i]['name']['last'];
+function olderPerson(y){
+  let old=0;
+  for (let i=0; i<y.length-1; i++){
+    if ((y[i].age) < (y[i+1].age)){
+      old=(y[i+1].name.first)+" "+(y[i+1].name.last);
+      
     }
   }
+ 
 
-  return oldername;
+  console.log(old);
+  return old;
 
 }
-document.getElementById("demo3").innerHTML = max ;
-/*
-5
-Using the varabile persons
-Create a function called longestName
-that accept an object
-and return the full name of the person have longest full name
 
-Ex: longestName(persons) => "Soso Al-Amora"
-*/
+//  document.getElementById("task4").innerHTML=olderPerson(persons);
 
 
-/*
-6
-Using the varabile persons
-Create a function called longestName
-that accept an object
-and return the full name of the person have longest full name
 
-Ex: longestName(persons) => "Soso Al-Amora"
-*/
 
-//////////////////////////////////////////////////////////////////
 
-/*
-7
-Create a function called repeatWord
-that accept a string
-and return an object that represents how many times each word repeat
-** no matter it is upper case or lower case
-** Search on MDN about something can cut the string to words??
+///////////////////////////////////////////////Q5
+function longestName(z){
+  let long = 0;
 
-Ex: repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO")
-=> {
-  my:1,
-  name:2,
-  is:1,
-  alex:1,
-  mercer:1,
-  class:1,
-  b:1,
-  baba:1,
-  mama:1,
-  hello:3
+  for (let i=0; i< z.length-1; i++ ){
+      if(((z[i].name.first+ z[i].name.last ).length)<((z[i+1].name.first+ z[i+1].name.last ).length)){
+        long=(z[i+1].name.first+" "+ z[i+1].name.last );
+      }
+  }
+
+  console.log(long);
+  return long;
+
 }
-*/
+
+
+// document.getElementById("task5").innerHTML=longestName(persons);
 
 
 
-/*
-8
-Create a function called repeatChar
-that accept a string
-and return an object that represents how many times each char repeat
-** no matter it is upper case or lower case
-** Search on MDN about something can cut the string to char??
 
-Ex: repeatChar("mamababatetacedo")
-=> { m:2,  a:5, b:2, t2:, e:2, c:1, d:1, o:1}
-*/
+///////////////////////////////////////////////Q7
 
-
-/*
-9
-Create a function called selectFromObject
-that accept an object and an array
-and return an object have the key that inside the array
-
-Ex: selectFromObject({a: 1, cat: 3}, ['a', 'cat', 'd'])
-=>  {a: 1, cat: 3}
-*/
+function repeatWord(str) {
+  let arr = str.split(' ');
+  let obj = {};
+  for (let i = 0; i < arr.length; i++) {
+    if (obj[arr[i].toLowerCase()]) {
+      obj[arr[i].toLowerCase()] += 1
+    } else {
+      obj[arr[i].toLowerCase()] = 1
+    }
+  }
+  console.log(obj);
+  return obj;
+}
 
 
-/*
-10
-Create a function called objectToArray
-that accept an object
-and return an array of the keys and values in this object
-
-Ex: objectToArray({firstName:"Moh",age:24})
-=> ["firstName","Moh","age",24]
-*/
+repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO");
+document.getElementById("Task7").innerHTML=`The result is in the console`
 
 
-/*
-11
-Create a function called arrayToObject
-that accept an array
-and return an object of the keys and values in this object
+////////////////////////////////Q8
 
-Ex: arrayToObject(["firstName","Moh","age",24])
-=> {firstName:"Moh",age:24}
-*/
+function repeatChar(char){
+  let objectletter=char.split("");
+  let letters={};
+  
 
+  for (let i=0; i<objectletter.length; i++){
+    if (letters[objectletter[i].toLowerCase()]){
+      letters[objectletter[i].toLowerCase()]+= 1
 
-/*
-12
-Create a function called onlyNumber
-that accept an object
-and return a new object that have only the values that is a number
-**hint: search in MDN how to know the type of variable
+    }
+    else{
+      letters[objectletter[i].toLowerCase()]= 1
+    }
 
-Ex: onlyNumber({firstName:"Moh",age:24,movies:[1,5,"string"]})
-=> {age:24}
-*/
+  }
+console.log(letters);
+return letters;
 
-
-/*
-13
-Create a function called onlyString
-that accept an object
-and return a new object that have only the values that is a string
-**hint: search in MDN how to know the type of variable
-
-Ex: onlyString({firstName:"Moh",age:24,movies:[1,5,"string"]})
-=> {firstName:"Moh"}
-*/
+}
 
 
-/*
-14
-Create a function called onlyArray
-that accept an object
-and return a new object that have only the values that is a array
-**hint: search in MDN how to know the type of variable
+repeatChar("mamababatetacedo");
 
-Ex: onlyArray({firstName:"Moh",age:24,movies:[1,5,"string"]})
-=> {movies:[1,5,"string"]}
-*/
+document.getElementById("Task8").innerHTML=`The result is in the console`;
+
+
+///////////////////////////////////////////Q9
+function selectFromObject(obj, arr) {
+  var result = {}
+  for (var i = 0; i < arr.length; i++) {
+    if (obj[arr[i].toLowerCase()]) {
+      result[arr[i].toLowerCase()] = obj[arr[i].toLowerCase()]
+    }
+  }
+  console.log(result);
+  return result;
+}
+//  document.getElementById("Task9").innerHTML= selectFromObject({a: 1, cat: 3}, ['a', 'cat', 'd']);
+
+
+/////////////////////////////////////////////Q10
+let objt={firstName:"Moh",
+  age:24}
+  function objectToArray(){
+  
+    console.log((Object.keys(objt)),(Object.values(objt)));
+  }
+
+  // document.getElementById("Task10").innerHTML=  objectToArray();
+  
+  
 
 
 
-// 15
-// Create a function called keysArray
-// that accept an object
-// and return an array have the key inside this object
 
-// Ex: keysArray({firstName:"Moh",age:24,movies:[1,5,"string"]})
-// => ['firstName', 'age', 'movies']
+////////////////////////////////////////////////Q11
+function arrayToObject(arr) {
+  var obj = {};
+  for (var i = 0; i < arr.length; i += 2) {
+    obj[arr[i]] = arr[i + 1];
+  }
+  console.log(obj);
+  return obj;
+
+}
+
+arrayToObject(["firstName","Moh","age",24])
+// document.getElementById("Task11").innerHTML=`The result is in the console` ;
+
+
+
+
+
+////////////////////////////////////////////////Q12
+function onlyNumber(obj) {
+  var result = {}
+  for (var key in obj) {
+    if (typeof obj[key] === "number") {
+      result[key] = obj[key];
+    }
+  }
+  console.log(result);
+  return result;
+}
+
+onlyNumber({firstName:"Moh",age:24,movies:[1,5,"string"]});
+// document.getElementById("Task12").innerHTML=`The result is in the console` ;
+
+
+////////////////////////////////////////////////Q13
+
+function onlyString(obj) {
+  var result = {}
+  for (var key in obj) {
+    if (typeof obj[key] === "string") {
+      result[key] = obj[key];
+    }
+  }
+  console.log(result);
+  return result;
+}
+
+onlyString({firstName:"Moh",age:24,movies:[1,5,"string"]})
+// document.getElementById("Task13").innerHTML=`The result is in the console` ; 
+
+/////////////////////////////////////////////////////Q14
+
+function onlyArray(obj) {
+  var result = {}
+  for (var key in obj) {
+    if (Array.isArray(obj[key])) {
+      result[key] = obj[key];
+    }
+  }
+  console.log(result);
+  return result;
+}
+onlyArray({firstName:"Moh",age:24,movies:[1,5,"string"]})
+
+document.getElementById("Task14").innerHTML=`The result is in the console` ;
+
+//////////////////////////////////////////////////////Q15
+
+function keysArray(obj) {
+  var result = [];
+  for (var key in obj) {
+    result.push(key);
+  }
+  console.log( result);
+  return result;
+}
+keysArray({firstName:"Moh",age:24,movies:[1,5,"string"]})
+document.getElementById("Task15").innerHTML=`The result is in the console` ; 
+
 
 

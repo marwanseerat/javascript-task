@@ -13,9 +13,14 @@ ferEach :/*
 *
 */
 function doubleValues(arr){
-   //Your Code Here
+  let newArray=[];
+    arr.forEach(i => {
+        newArray.push(i*2);
+        i++;
+    });
+    return newArray;
 }
-
+document.getElementById('task1').innerHTML=doubleValues([5,1,2,3,10]);
 /*
 * Exercise 2:
 * Write a function called onlyEvenValues which accepts an array and returns a new array with only the even values in the array passed to the function
@@ -29,9 +34,16 @@ function doubleValues(arr){
 *  Test Case 2: [2,10]
 */
 function onlyEvenValues(arr){
-    //Your Code Here
+  let newArray=[];
+  arr.forEach(i =>{
+      if(i%2==0){
+          newArray.push(i);
+      }
+  });
+  return newArray
     
 }
+document.getElementById('task2').innerHTML=onlyEvenValues([5,1,2,3,10])
 
 /*
 * Exercise 3:
@@ -47,8 +59,13 @@ function onlyEvenValues(arr){
 *
 */
 function showFirstAndLast(arr){
-   //Your Code Here
+  let newArray=[];
+  arr.forEach(i=>{
+      newArray.push(i[0]+i[i.length-1]);
+  });
+  return newArray
 }
+document.getElementById('task3').innerHTML=showFirstAndLast(['colt','matt', 'tim', 'udemy']);
 
 /*
 * Exercise 4:
@@ -63,8 +80,13 @@ function showFirstAndLast(arr){
 *
 */
 function addKeyAndValue(arr,key,value){
-    //Your Code Here
+  arr.forEach(function(val){
+    val[key] = value;
+});
+return arr;
 }
+console.log('Q4: ');
+console.log(addKeyAndValue([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Colt'}], 'title', 'instructor') );
 
 /*
 * Exercise 5:
@@ -88,5 +110,22 @@ function addKeyAndValue(arr,key,value){
 */
 
 function vowelCount(str){
-  //Your Code Here
+  
+  var splitArr = str.toLowerCase().split("");
+    var obj = {};
+    var vowels = "aeiou";
+
+    splitArr.forEach(function(letter){
+        if(vowels.indexOf(letter) !== -1){
+            if(obj[letter]){
+                obj[letter]++;
+            } else{
+                obj[letter] = 1;
+            }
+        }
+    });
+    return obj;
 }
+
+console.log('Q5: ');
+console.log(vowelCount('Elie'));
