@@ -1,8 +1,8 @@
 'use strict';
 let formOrder= document.getElementById("orderForm");
 let ulItem=document.getElementById("order");
-let banana=[];///1
- 
+let coffeArray=[];///1
+ //change array name to coffeArray
 function Coffee(cusName,cupSize,milkType,isHot,drinkType,price){
     this.cusName=cusName;
     this.cupSize=cupSize;
@@ -10,9 +10,9 @@ function Coffee(cusName,cupSize,milkType,isHot,drinkType,price){
     this.isHot=isHot;
     this.drinkType=drinkType;
     this.price=pricecoff(3,15)
-    banana.push(this);
+    coffeArray.push(this);
     renderOrder();
-    console.log(banana);
+    console.log(coffeArray);
 }
 function pricecoff(min,max) {
     return Math.floor(Math.random()*(max-min)+min)
@@ -49,19 +49,19 @@ formOrder.addEventListener("submit",handleSubmit);
      
     let hot;
 
-    for (let i = 0; i < banana.length; i++) {
+    for (let i = 0; i < coffeArray.length; i++) {
        let liElement=document.createElement("li");
        let parElement=document.createElement("p");
        ulItem.appendChild(liElement);
        liElement.appendChild(parElement);
        
-       if(banana[i].isHot === true){
+       if(coffeArray[i].isHot === true){
            hot="hot"
        }else{
            hot="cold";
        }
 
-       parElement.textContent=`this customer ${banana[i].cusName} he order the following ${banana[i].cupSize} with ${banana[i].milkType} and he prefare is ${hot} in ${banana[i].drinkType} ${banana[i].price} `;
+       parElement.textContent=`this customer ${coffeArray[i].cusName} he order the following ${banana[i].cupSize} with ${banana[i].milkType} and he prefare is ${hot} in ${banana[i].drinkType} ${banana[i].price} `;
         
     }
    //  return this.cusName+"has ordered "+this.drinkType
